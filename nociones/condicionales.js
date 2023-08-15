@@ -1,9 +1,9 @@
 let booleano = false;
 if (booleano == true) {
-    console.log("1. Verdadero");
+    console.log("Verdadero");
 }
 else {
-    console.log("1. Falso");
+    console.log("Falso");
 }
 
 let numero = 32;
