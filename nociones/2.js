@@ -26,3 +26,5 @@ function areaRectangulo(b,h) {
     return b * h;
 }
 console.log(areaRectangulo(2,3));
+
+//Iker Fernando Acevedo Silva
