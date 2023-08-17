@@ -1,8 +1,8 @@
 function esAsciiEntreAyZ(cadena) {
     for (let i = 0; i < cadena.length; i++) {
-        const valorAscii = cadena.charCodeAt(i);
-        if (valorAscii < 97 || valorAscii > 122) {
-            return false;
+        const valorAscii = cadena.charCodeAt(i); // Se verifica que numero en la codificacion ascii es el caracter actual
+        if (valorAscii < 97 || valorAscii > 122) {  // Si valorAscii actual esta entre 97 y 122 es valido
+            return false; // De lo contrario se devuelve un false
         }
     }
     return true;
@@ -11,11 +11,11 @@ function esAsciiEntreAyZ(cadena) {
 function psw(a,b){
     let stringA = a;
     let stringB = b;
-    if (!(esAsciiEntreAyZ(stringA))) {
+    if (!(esAsciiEntreAyZ(stringA))) { // Si el string tiene algun caracter que no este entre a - z se devuelve false, pero lo invertimos para poder hacer una accion dentro del condicional
         console.log('El valor ingresado en A no se encuentra entre el parametro ascii (a - z)');
         return
     }
-    if (!(esAsciiEntreAyZ(stringB))) {
+    if (!(esAsciiEntreAyZ(stringB))) { // Si el string tiene algun caracter que no este entre a - z se devuelve false, pero lo invertimos para poder hacer una accion dentro del condicional
         console.log('El valor ingresado en B no se encuentra entre el parametro ascii (a - z)');
         return
     }
@@ -36,22 +36,22 @@ function psw(a,b){
         return
     }
     let psw = '';
-    let stringAStatus = true;
-    let stringBStatus = true;
-    for (i=0; i<((stringA.length)+(stringB.length)); i++) {
-        if (stringA.length == i) {
+    let stringAStatus = true; // El estado de los string se declara positivo desde un inicio para poder concatenarlos
+    let stringBStatus = true; // El estado de los string se declara positivo desde un inicio para poder concatenarlos
+    for (i=0; i<((stringA.length)+(stringB.length)); i++) { // El for sera igual de largo a la suma de la longitud de ambos strings
+        if (stringA.length == i) {// Si el string ya ha terminado de concatenarse, su status cambia a falso para no intentar nuevamente
             stringAStatus = false;
         }
-        else if (stringB.length == i) {
+        else if (stringB.length == i) {// Si el string ya ha terminado de concatenarse, su status cambia a falso para no intentar nuevamente
             stringBStatus = false;
         }
-        if (stringAStatus) {
+        if (stringAStatus) { 
             psw += stringA[i]
         }
         if (stringBStatus) {
             psw += stringB[i]
         }
-        if (!stringAStatus && !stringBStatus) {
+        if (!stringAStatus && !stringBStatus) {  // Si ambas han terminado de concatenarse se acaba el ciclo for
             break;
         }
     }
@@ -61,3 +61,5 @@ psw('hackerrank','mountain')
 // hackerrank
 // mountain
 // psw : hmaocuknetrariannk
+
+// Iker Fernando Acevedo Silva
